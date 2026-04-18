@@ -1,0 +1,46 @@
+HOME/
+├── node_modules/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── common/
+│   │   │   ├── FloatingButtons.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   └── ServiceCard.jsx
+│   │   │
+│   │   ├── home/
+│   │   │   ├── HappinessFeatures.jsx
+│   │   │   ├── Hero.jsx
+│   │   │   └── MostUsedServices.jsx
+│   │   │
+│   │   ├── layout/
+│   │   │   └── Layout.jsx
+│   │   │
+│   │   └── services/
+│   │       ├── BookingForm.jsx
+│   │       ├── FilterDropdown.jsx
+│   │       ├── ServiceDetail.jsx
+│   │       └── ServicesWeProvide.jsx
+│   │
+│   ├── data/
+│   │   └── services.js
+│   │
+│   ├── hooks/
+│   │
+│   ├── pages/
+│   │   └── HomePage.jsx
+│   │
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+│
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+└── vite.config.js

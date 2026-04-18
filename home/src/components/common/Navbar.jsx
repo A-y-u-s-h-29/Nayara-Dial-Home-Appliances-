@@ -1,91 +1,189 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from 'react';
+import { 
+  Search, 
+  MapPin, 
+  Phone, 
+  Menu, 
+  X,
+} from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { useServices } from '../../context/ServicesContext';
+import logo from "/logo.png";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [localLocation, setLocalLocation] = useState('Delhi NCR');
+  const [localSearchQuery, setLocalSearchQuery] = useState('');
+  const { 
+    setSearchQuery, 
+    setSelectedLocation,
+  } = useServices();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setSearchQuery(localSearchQuery);
+  };
+
+  const handleLocationChange = (e) => {
+    const newLocation = e.target.value;
+    setLocalLocation(newLocation);
+    setSelectedLocation(newLocation === 'Delhi NCR' ? 'all' : newLocation);
+  };
+
+  const handlePhoneClick = () => {
+    window.location.href = 'tel:+919760075738';
+  };
+
+  const handleBookNowClick = () => {
+    navigate('/service/1');
+  };
+
+  const navLinks = [
+    { name: 'Home Appliances', href: '#', onClick: () => navigate('/') },
+    { name: 'Handyman Services', href: '#', onClick: () => navigate('/') },
+    { name: 'Book Now', href: '#', highlight: true, onClick: handleBookNowClick },
+  ];
 
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-white/95 backdrop-blur-xl shadow-sm"
-          : "bg-white/80 backdrop-blur-md shadow-sm"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 sm:h-20">
-          {/* Logo - Left Side */}
-          <div className="flex items-center space-x-3 group cursor-pointer">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-stone-800 rounded-xl flex items-center justify-center shadow-md group-hover:bg-stone-700 transition-all duration-300">
-              <span className="text-white font-bold text-xl sm:text-2xl">N</span>
+    <header className="sticky top-0 z-50 shadow-sm">
+      
+      <div className="bg-gray-50 border-b border-gray-200">
+        <div className="container mx-auto px-3 sm:px-4">
+          
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between py-3 gap-4">
+            
+            {/* Logo - Click to go home */}
+            <div 
+              onClick={() => navigate('/')}
+              className="flex items-center gap-2 cursor-pointer"
+            >
+              <img 
+                src={logo} 
+                alt="Nayara DialHome Service Logo" 
+                className="h-10 w-auto object-contain"
+              />
+              
             </div>
-            <div>
-              <h1 className="text-stone-800 font-bold text-lg sm:text-xl tracking-tight">
-                NAYARA DIAL
-              </h1>
-              <p className="text-stone-500 text-xs font-medium">Home Service</p>
+
+            {/* Search and Location */}
+            <div className="flex flex-col sm:flex-row gap-3 w-full lg:flex-1 lg:max-w-2xl">
+              
+              {/* Location Dropdown */}
+              <div className="relative w-full sm:w-auto">
+                <select 
+                  value={localLocation}
+                  onChange={handleLocationChange}
+                  className="w-full appearance-none border rounded-lg px-4 py-2 bg-white pr-10 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                  <option>Delhi NCR</option>
+                  <option>Mumbai</option>
+                  <option>Bangalore</option>
+                  <option>Chennai</option>
+                  <option>Kolkata</option>
+                  <option>Noida</option>
+                  <option>Gurugram</option>
+                </select>
+                <MapPin className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
+              </div>
+
+              {/* Search Bar */}
+              <form onSubmit={handleSearch} className="flex-1 w-full">
+                <div className="flex border rounded-lg overflow-hidden bg-white focus-within:ring-2 focus-within:ring-blue-500">
+                  <input
+                    type="text"
+                    placeholder="Search for a service..."
+                    value={localSearchQuery}
+                    onChange={(e) => setLocalSearchQuery(e.target.value)}
+                    className="px-3 sm:px-4 py-2 flex-1 outline-none text-sm sm:text-base"
+                  />
+                  <button type="submit" className="bg-blue-900 px-3 sm:px-4 py-2 hover:bg-blue-800 transition-colors">
+                    <Search className="h-5 w-5 text-white" />
+                  </button>
+                </div>
+              </form>
             </div>
-          </div>
 
-          {/* Desktop Navigation - Right Side */}
-          <div className="hidden md:flex items-center space-x-8">
-            {["Home", "Services", "Contact"].map((item, index) => (
-              <a
-                key={index}
-                href={`#${item.toLowerCase()}`}
-                className="text-stone-600 hover:text-stone-900 font-medium transition-all duration-300 relative group"
+            {/* Contact Info - Click to dial */}
+            <div 
+              onClick={handlePhoneClick}
+              className="flex items-center justify-between sm:justify-start gap-2 bg-white rounded-lg px-3 sm:px-4 py-2 border border-gray-200 shadow-sm w-full sm:w-auto cursor-pointer hover:bg-gray-50 transition-colors"
+            >
+              <Phone className="h-5 w-5 text-blue-900" />
+              <span className="font-bold text-sm sm:text-base text-gray-800">
+                9760075738
+              </span>
+
+              {/* Mobile Menu Button */}
+              <button 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsMenuOpen(!isMenuOpen);
+                }}
+                className="lg:hidden ml-auto p-2 rounded-lg hover:bg-gray-200 transition-colors"
               >
-                {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-stone-800 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            ))}
-          </div>
+                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all duration-300 focus:outline-none"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {isMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        <div
-          className={`md:hidden overflow-hidden transition-all duration-500 ${
-            isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-          }`}
-        >
-          <div className="py-4 space-y-2 border-t border-stone-100">
-            {["Home", "Services", "Contact"].map((item, index) => (
-              <a
-                key={index}
-                href={`#${item.toLowerCase()}`}
-                className="block px-4 py-3 text-stone-700 font-medium rounded-lg hover:bg-stone-50 hover:text-stone-900 transition-all duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item}
-              </a>
-            ))}
           </div>
         </div>
       </div>
-    </nav>
+
+      {/* Navigation Bar */}
+      <nav className="bg-blue-900">
+        <div className="container mx-auto px-4">
+          <div className="hidden lg:flex items-center justify-between py-2">
+            <div className="flex items-center gap-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (link.onClick) {
+                      link.onClick();
+                    }
+                  }}
+                  className={`text-white hover:text-blue-300 transition-colors cursor-pointer font-medium ${
+                    link.highlight ? 'bg-blue-700 px-4 py-2 rounded-lg hover:bg-blue-600' : ''
+                  }`}
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+            <div className="lg:hidden py-4 border-t border-blue-800">
+              <div className="flex flex-col space-y-3">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className={`text-white py-2 ${
+                      link.highlight ? 'bg-blue-700 px-4 rounded-lg text-center' : ''
+                    }`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (link.onClick) {
+                        link.onClick();
+                      }
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </nav>
+    </header>
   );
 };
 
-export default Navbar;  
+export default Navbar;

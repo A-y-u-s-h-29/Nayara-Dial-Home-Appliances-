@@ -1,37 +1,37 @@
 import React from "react";
+import logo from "/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-stone-900 to-stone-800 text-stone-200 mt-16 border-t border-stone-700" id="contact">
+    <footer className="bg-[#052C57] mt-16 border-t border-blue-800" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xl">N</span>
-              </div>
-              <div>
-                <h3 className="font-bold text-xl text-stone-100">NAYARA DIAL</h3>
-                <p className="text-stone-400 text-sm">Home Service</p>
-              </div>
+            <div className="flex items-center justify-center bg-white rounded-3xl h-13 mb-2">
+              <img 
+                src={logo} 
+                alt="Nayara DialHome Service Logo" 
+                className="w-50 h-40 object-contain"
+              />
+              
             </div>
-            <p className="text-stone-400 text-sm leading-relaxed">
+            <p className="text-gray-300 text-sm leading-relaxed">
               Professional home services at your doorstep. Quality assured, same-day service available with verified professionals.
             </p>
             {/* Social Icons */}
             <div className="flex gap-3 mt-4">
-              <a href="#" className="w-8 h-8 rounded-full bg-stone-700/50 flex items-center justify-center text-stone-400 hover:bg-amber-500 hover:text-white transition-all duration-300">
+              <a href="#" className="w-8 h-8 rounded-full bg-blue-800/50 flex items-center justify-center text-gray-300 hover:bg-blue-700 hover:text-white transition-all duration-300">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
                 </svg>
               </a>
-              <a href="#" className="w-8 h-8 rounded-full bg-stone-700/50 flex items-center justify-center text-stone-400 hover:bg-amber-500 hover:text-white transition-all duration-300">
+              <a href="#" className="w-8 h-8 rounded-full bg-blue-800/50 flex items-center justify-center text-gray-300 hover:bg-blue-700 hover:text-white transition-all duration-300">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0021.596-12.2c0-.21-.004-.42-.014-.63A9.935 9.935 0 0024 4.59z"/>
                 </svg>
               </a>
-              <a href="#" className="w-8 h-8 rounded-full bg-stone-700/50 flex items-center justify-center text-stone-400 hover:bg-amber-500 hover:text-white transition-all duration-300">
+              <a href="#" className="w-8 h-8 rounded-full bg-blue-800/50 flex items-center justify-center text-gray-300 hover:bg-blue-700 hover:text-white transition-all duration-300">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
                 </svg>
@@ -41,90 +41,107 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-lg mb-4 text-stone-100 relative inline-block">
+            <h4 className="font-semibold text-lg mb-4 text-white relative inline-block">
               Quick Links
-              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full"></span>
+              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-blue-400 rounded-full"></span>
             </h4>
-            <ul className="space-y-3 text-stone-400 text-sm">
-              <li><a href="#" className="hover:text-amber-400 transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-amber-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>About Us</a></li>
-              <li><a href="#services" className="hover:text-amber-400 transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-amber-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Our Services</a></li>
-              <li><a href="#how-we-work" className="hover:text-amber-400 transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-amber-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>How It Works</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-amber-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Terms & Conditions</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-amber-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Privacy Policy</a></li>
+            <ul className="space-y-3 text-gray-300 text-sm">
+              <li><a href="#" className="hover:text-blue-300 transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>About Us</a></li>
+              <li><a href="#services" className="hover:text-blue-300 transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Our Services</a></li>
+              <li><a href="#how-we-work" className="hover:text-blue-300 transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>How It Works</a></li>
+              <li><a href="#" className="hover:text-blue-300 transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Terms & Conditions</a></li>
+              <li><a href="#" className="hover:text-blue-300 transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Privacy Policy</a></li>
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold text-lg mb-4 text-stone-100 relative inline-block">
+            <h4 className="font-semibold text-lg mb-4 text-white relative inline-block">
               Our Services
-              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full"></span>
+              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-blue-400 rounded-full"></span>
             </h4>
-            <ul className="space-y-3 text-stone-400 text-sm">
-              <li><a href="#" className="hover:text-amber-400 transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-amber-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>AC Repair & Service</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-amber-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Plumbing Solutions</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-amber-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Electrical Services</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-amber-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Home Deep Cleaning</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-amber-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Painting Services</a></li>
+            <ul className="space-y-3 text-gray-300 text-sm">
+              <li><a href="#" className="hover:text-blue-300 transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>AC Repair & Service</a></li>
+              <li><a href="#" className="hover:text-blue-300 transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Plumbing Solutions</a></li>
+              <li><a href="#" className="hover:text-blue-300 transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Electrical Services</a></li>
+              <li><a href="#" className="hover:text-blue-300 transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Home Deep Cleaning</a></li>
+              <li><a href="#" className="hover:text-blue-300 transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Painting Services</a></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold text-lg mb-4 text-stone-100 relative inline-block">
+            <h4 className="font-semibold text-lg mb-4 text-white relative inline-block">
               Contact Us
-              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full"></span>
+              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-blue-400 rounded-full"></span>
             </h4>
-            <ul className="space-y-3 text-stone-400 text-sm">
-              <li className="flex items-center gap-3 group hover:text-amber-400 transition-colors duration-300">
-                <div className="w-8 h-8 rounded-lg bg-stone-700/50 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors">
-                  <svg className="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <ul className="space-y-3 text-gray-300 text-sm">
+              <li className="flex items-start gap-3 group hover:text-blue-300 transition-colors duration-300">
+                <div className="w-8 h-8 rounded-lg bg-blue-800/50 flex items-center justify-center group-hover:bg-blue-700 transition-colors flex-shrink-0 mt-0.5">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
-                <span>+91 98765 43210</span>
+                <div>
+                  <div>+91 9760075738</div>
+                  <div>+91 7895315929</div>
+                </div>
               </li>
-              <li className="flex items-center gap-3 group hover:text-amber-400 transition-colors duration-300">
-                <div className="w-8 h-8 rounded-lg bg-stone-700/50 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors">
-                  <svg className="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <li className="flex items-center gap-3 group hover:text-blue-300 transition-colors duration-300">
+                <div className="w-8 h-8 rounded-lg bg-blue-800/50 flex items-center justify-center group-hover:bg-blue-700 transition-colors">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <span>hello@nayaradial.com</span>
+                <span>dialnayara@gmail.com</span>
               </li>
-              <li className="flex items-center gap-3 group hover:text-amber-400 transition-colors duration-300">
-                <div className="w-8 h-8 rounded-lg bg-stone-700/50 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors">
-                  <svg className="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <li className="flex items-start gap-3 group hover:text-blue-300 transition-colors duration-300">
+                <div className="w-8 h-8 rounded-lg bg-blue-800/50 flex items-center justify-center group-hover:bg-blue-700 transition-colors flex-shrink-0 mt-0.5">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <span>Delhi NCR, India</span>
+                <div>
+                  <div>Bangalore, Karnataka,</div>
+                  <div>Koramangala - 560047</div>
+                </div>
+              </li>
+              <li className="flex items-start gap-3 group hover:text-blue-300 transition-colors duration-300">
+                <div className="w-8 h-8 rounded-lg bg-blue-800/50 flex items-center justify-center group-hover:bg-blue-700 transition-colors flex-shrink-0 mt-0.5">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <div>
+                  <div>F 28, 60 Futa Road, Ved Vihar,</div>
+                  <div>Loni, Ghaziabad - 201102</div>
+                </div>
               </li>
             </ul>
             
-            {/* Working Hours */}
-            <div className="mt-6 p-3 bg-stone-700/30 rounded-lg border border-stone-700">
-              <p className="text-xs text-stone-400 flex items-center gap-2">
-                <svg className="w-3 h-3 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            {/* Service Area */}
+            <div className="mt-6 p-3 bg-blue-800/30 rounded-lg border border-blue-700">
+              <p className="text-xs text-gray-300 flex items-center gap-2">
+                <svg className="w-3 h-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                Available 24/7 for Emergency Services
+                Service available across India
               </p>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-stone-700 mt-10 pt-8">
+        <div className="border-t border-blue-800 mt-10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-stone-400 text-sm">
-              &copy; 2024 NAYARA DiAL Home Service. All rights reserved.
+            <p className="text-gray-400 text-sm">
+              &copy; 2024 NAYARA DIAL Home Service. All rights reserved.
             </p>
-            <div className="flex gap-6 text-xs text-stone-500">
-              <a href="#" className="hover:text-amber-400 transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-amber-400 transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-amber-400 transition-colors">Cookie Policy</a>
+            <div className="flex gap-6 text-xs text-gray-400">
+              <a href="#" className="hover:text-blue-300 transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-blue-300 transition-colors">Terms of Service</a>
+              <a href="#" className="hover:text-blue-300 transition-colors">Cookie Policy</a>
             </div>
           </div>
         </div>
