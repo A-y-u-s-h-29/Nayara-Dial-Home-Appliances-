@@ -29,19 +29,7 @@ const FloatingButtons = () => {
 
   return (
     <>
-      {/* Request Call Button (Left side - vertically centered) */}
-      <div className="fixed left-4 top-1/2 transform -translate-y-1/2 z-50">
-        <button
-          onClick={handleRequestCallClick}
-          className="group relative flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
-        >
-          
-          Request Callback
-          <span className="absolute left-full ml-2 whitespace-nowrap bg-gray-800 text-white text-sm px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-            Get a callback
-          </span>
-        </button>
-      </div>
+      
 
       {/* WhatsApp & Call Buttons (Right side - vertically centered) */}
       <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-4">
