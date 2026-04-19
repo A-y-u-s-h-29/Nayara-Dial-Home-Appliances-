@@ -65,8 +65,8 @@ const HappinessAndHowItWorks = () => {
             Because your happiness is our goal!
           </p>
           
-          {/* Features Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+          {/* Features Grid - Shows 2 columns on mobile, 2 on tablet, 4 on desktop */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
             {happinessFeatures.map((feature) => (
               <div
                 key={feature.title}
@@ -75,7 +75,7 @@ const HappinessAndHowItWorks = () => {
                 {/* Icon */}
                 <div className="mb-4 p-3 rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors duration-300">
                   <svg 
-                    className="w-12 h-12 text-blue-600 transition-transform duration-300 group-hover:scale-110"
+                    className="w-10 h-10 sm:w-12 sm:h-12 text-blue-600 transition-transform duration-300 group-hover:scale-110"
                     fill="none" 
                     stroke="currentColor" 
                     viewBox="0 0 24 24"
@@ -85,12 +85,12 @@ const HappinessAndHowItWorks = () => {
                 </div>
                 
                 {/* Heading */}
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                <h3 className="text-base sm:text-xl font-semibold text-gray-800 mb-2">
                   {feature.title}
                 </h3>
                 
                 {/* Description */}
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -102,11 +102,11 @@ const HappinessAndHowItWorks = () => {
         <div className="mt-16">
           {/* Title */}
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 text-center mb-12">
-            How <span className="text-blue-900 underline">RIGHTCLIQ</span> Works
+            How <span className="text-blue-900 underline">Nayara DialHome</span> Works
           </h2>
           
-          {/* Steps Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+          {/* Steps Grid - Shows 2 columns on mobile, 2 on tablet, 4 on desktop */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
             {howItWorksSteps.map((step, index) => (
               <div
                 key={step.title}
@@ -116,7 +116,7 @@ const HappinessAndHowItWorks = () => {
                 <div className="relative mb-4">
                   <div className="p-3 rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors duration-300">
                     <svg 
-                      className="w-12 h-12 text-blue-600 transition-transform duration-300 group-hover:scale-110"
+                      className="w-10 h-10 sm:w-12 sm:h-12 text-blue-600 transition-transform duration-300 group-hover:scale-110"
                       fill="none" 
                       stroke="currentColor" 
                       viewBox="0 0 24 24"
@@ -125,18 +125,18 @@ const HappinessAndHowItWorks = () => {
                     </svg>
                   </div>
                   {/* Step Number Badge */}
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-blue-900 text-white text-xs font-bold rounded-full flex items-center justify-center">
+                  <div className="absolute -top-2 -right-2 w-5 h-5 sm:w-6 sm:h-6 bg-blue-900 text-white text-xs font-bold rounded-full flex items-center justify-center">
                     {index + 1}
                   </div>
                 </div>
                 
                 {/* Title */}
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                <h3 className="text-base sm:text-xl font-semibold text-gray-800 mb-2">
                   {step.title}
                 </h3>
                 
                 {/* Description */}
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                   {step.description}
                 </p>
               </div>

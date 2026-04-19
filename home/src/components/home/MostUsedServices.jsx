@@ -4,25 +4,38 @@ import { useServices } from '../../context/ServicesContext';
 
 const MostUsedServices = () => {
   const navigate = useNavigate();
-  const { filteredServices, searchQuery, selectedLocation, setSearchQuery, setSelectedLocation } = useServices();
+  const { filteredServices, searchQuery, selectedLocation, setSearchQuery, setSelectedLocation, services } = useServices();
   
-  const staticServices = [
-    { id: 1, name: 'Air Conditioner', imagePath: '/s (3).png' },
-    { id: 2, name: 'Water Purifier', imagePath: '/s (2).png' },
-    { id: 3, name: 'Washing Machine', imagePath: '/s (1).png' },
-    { id: 4, name: 'Refrigerator', imagePath: '/s (6).webp' },
-    { id: 5, name: 'Chimney Service', imagePath: '/s (5).webp' },
-    { id: 6, name: 'Gas Stove', imagePath: '/s (4).webp' },
-    { id: 7, name: 'Gas Pipeline', imagePath: '/s (3).webp' },
-    { id: 8, name: 'Plumber', imagePath: '/s (2).webp' },
+  // Get the 8 specific services you want to show in order
+  const staticServiceNames = [
+    'AC Repair Service',
+    'Water Purifier Repair Service',
+    'Washing Machine Repair Service',
+    'Refrigerator Repair Service',
+    'Chimney Repair Service',
+    'Gas Stove Repair Service',
+    'Gas Pipeline Service',
+    'Plumber Service'
   ];
 
+  // Create static services from your actual data
+  const staticServices = staticServiceNames
+    .map(serviceName => services?.find(s => s.name === serviceName))
+    .filter(service => service) // Remove any undefined services
+    .map(service => ({
+      id: service.id,
+      name: service.name,
+      imagePath: service.iconUrl, // Use iconUrl from the dataset
+      location: service.location,
+    }));
+
   const hasActiveFilter = searchQuery !== '' || selectedLocation !== 'all';
+  
   const displayServices = hasActiveFilter && filteredServices.length > 0 
     ? filteredServices.map(service => ({
         id: service.id,
         name: service.name,
-        imagePath: service.imagePath || '/s (3).png',
+        imagePath: service.iconUrl, // Use iconUrl from the dataset
         location: service.location,
       }))
     : staticServices;
@@ -57,7 +70,6 @@ const MostUsedServices = () => {
           </div>
         )}
 
-        {/* Use flexbox with justify-center for better centering */}
         <div className="flex flex-wrap justify-center lg:justify-start gap-10">
           {displayServices.map((service) => (
             <div
@@ -77,7 +89,8 @@ const MostUsedServices = () => {
                   alt={service.name}
                   className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
                   onError={(e) => {
-                    e.currentTarget.src = 'https://via.placeholder.com/80x80/3b82f6/white?text=' + service.name;
+                    const firstLetter = service.name.charAt(0);
+                    e.currentTarget.src = `https://via.placeholder.com/80x80/3b82f6/white?text=${firstLetter}`;
                   }}
                 />
               </div>

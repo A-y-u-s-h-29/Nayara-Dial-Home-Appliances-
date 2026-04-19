@@ -51,7 +51,73 @@ const Navbar = () => {
       <div className="bg-gray-50 border-b border-gray-200">
         <div className="container mx-auto px-3 sm:px-4">
           
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between py-3 gap-4">
+          {/* Mobile Layout (2 rows) - visible on small screens, hidden on large */}
+          <div className="lg:hidden py-2">
+            {/* ROW 1: Top Bar */}
+            <div className="flex items-center justify-between mb-3">
+              {/* LEFT: Logo + Brand */}
+              <div className="flex items-center gap-2">
+                <img 
+                  src={logo} 
+                  alt="Nayara DialHome Service Logo" 
+                  className="h-8 w-auto object-contain cursor-pointer"
+                  onClick={() => navigate('/')}
+                />
+                
+              </div>
+              
+              {/* RIGHT: Phone */}
+              <div 
+                onClick={handlePhoneClick}
+                className="flex items-center gap-1 cursor-pointer"
+              >
+                <Phone className="h-4 w-4 text-gray-700" />
+                <span className="font-bold text-sm text-gray-800">
+                  9760075738
+                </span>
+              </div>
+            </div>
+
+            {/* ROW 2: Search Section */}
+            <div className="flex gap-2">
+              {/* Location Dropdown */}
+              <div className="relative">
+                <select 
+                  value={localLocation}
+                  onChange={handleLocationChange}
+                  className="appearance-none rounded-lg border border-gray-300 px-3 py-2 pr-7 text-sm bg-white cursor-pointer focus:outline-none focus:ring-1 focus:ring-blue-500"
+                >
+                  <option>Delhi NCR</option>
+                  <option>Mumbai</option>
+                  <option>Bangalore</option>
+                  <option>Chennai</option>
+                  <option>Kolkata</option>
+                  <option>Noida</option>
+                  <option>Gurugram</option>
+                </select>
+                <MapPin className="absolute right-2 top-1/2 transform -translate-y-1/2 h-3.5 w-3.5 text-gray-400 pointer-events-none" />
+              </div>
+
+              {/* Search Bar */}
+              <form onSubmit={handleSearch} className="flex-1">
+                <div className="flex rounded-lg border border-gray-300 overflow-hidden bg-white">
+                  <input
+                    type="text"
+                    placeholder="Search for a service..."
+                    value={localSearchQuery}
+                    onChange={(e) => setLocalSearchQuery(e.target.value)}
+                    className="flex-1 px-3 py-2 text-sm outline-none"
+                  />
+                  <button type="submit" className="bg-gray-900 px-3 py-2 hover:bg-gray-800 transition-colors">
+                    <Search className="h-4 w-4 text-white" />
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          {/* Desktop Layout - unchanged */}
+          <div className="hidden lg:flex flex-col lg:flex-row lg:items-center lg:justify-between py-3 gap-4">
             
             {/* Logo - Click to go home */}
             <div 
@@ -114,7 +180,7 @@ const Navbar = () => {
                 9760075738
               </span>
 
-              {/* Mobile Menu Button */}
+              {/* Mobile Menu Button - moved to mobile section */}
               <button 
                 onClick={(e) => {
                   e.stopPropagation();
@@ -130,7 +196,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Navigation Bar */}
+      {/* Navigation Bar - unchanged */}
       <nav className="bg-blue-900">
         <div className="container mx-auto px-4">
           <div className="hidden lg:flex items-center justify-between py-2">

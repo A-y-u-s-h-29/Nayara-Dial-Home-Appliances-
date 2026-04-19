@@ -31,7 +31,7 @@ export const ServicesProvider = ({ children, servicesData = [] }) => {
     ? ['all', ...new Set(services.map(s => s.location))]
     : ['all'];
 
-  // Filter services based on search and location
+  // Filter services based on search and location for MostUsedServices
   const filteredServices = services && services.length > 0 
     ? services.filter(service => {
         const matchesSearch = searchQuery === '' || 

@@ -215,7 +215,7 @@ const services = [
     },
     visitCharge: "₹200",
     category: "AC Repair",
-    iconUrl: "/ac.png",
+    iconUrl: "/s (3).png",
     imageUrl: "/service.jpg"
   },
   {
@@ -234,7 +234,7 @@ const services = [
     },
     visitCharge: "₹200",
     category: "Water Purifier",
-    iconUrl: "/icon1 (2).png",
+    iconUrl: "/s (2).png",
     imageUrl: "/service1.jpg"
   },
   {
@@ -253,7 +253,7 @@ const services = [
     },
     visitCharge: "₹200",
     category: "Washing Machine",
-    iconUrl: "/icon1 (1).png",
+    iconUrl: "/s (1).png",
     imageUrl: "/service2.avif"
   },
   {
@@ -272,7 +272,7 @@ const services = [
     },
     visitCharge: "₹200",
     category: "Refrigerator",
-    iconUrl: "/icon1 (4).png",
+    iconUrl: "/s (6).webp",
     imageUrl: "/service3.jpg"
   },
   {
@@ -291,7 +291,7 @@ const services = [
     },
     visitCharge: "₹200",
     category: "Chimney",
-    iconUrl: "/ac.png",
+    iconUrl: "/s (5).webp",
     imageUrl: "/service4.jpg"
   },
   {
@@ -310,7 +310,7 @@ const services = [
     },
     visitCharge: "₹200",
     category: "Gas Stove",
-    iconUrl: "/icon1 (2).png",
+    iconUrl: "/s (4).webp",
     imageUrl: "/service5.jpg"
   },
   {
@@ -329,7 +329,7 @@ const services = [
     },
     visitCharge: "₹200",
     category: "Gas Pipeline",
-    iconUrl: "/icon1 (4).png",
+    iconUrl: "/s (3).webp",
     imageUrl: "/service6.avif"
   },
   {
@@ -348,7 +348,7 @@ const services = [
     },
     visitCharge: "₹200",
     category: "Plumbing",
-    iconUrl: "/icon1 (4).png",
+    iconUrl: "/s (2).webp",
     imageUrl: "/service7.avif"
   }
 ];

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";  // Remove BrowserRouter import
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 import FloatingButtons from "./components/common/FloatingButtons";
@@ -24,21 +24,19 @@ function HomePage() {
 
 function App() {
   return (
-    <Router>
-      <ServicesProvider servicesData={servicesData}>
-        <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 via-white to-gray-50">
-          <Navbar />
-          <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/service/:id" element={<ServiceDetailPage />} />
-            </Routes>
-          </main>
-          <Footer />
-          <FloatingButtons />
-        </div>
-      </ServicesProvider>
-    </Router>
+    <ServicesProvider servicesData={servicesData}>
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 via-white to-gray-50">
+        <Navbar />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/service/:id" element={<ServiceDetailPage />} />
+          </Routes>
+        </main>
+        <FloatingButtons />
+        <Footer />
+      </div>
+    </ServicesProvider>
   );
 }
 

@@ -18,16 +18,21 @@ const ServiceDetailPage = () => {
   });
 
   useEffect(() => {
-    if (services && services.length > 0 && id) {
-      const foundService = services.find(s => s.id === parseInt(id));
-      if (foundService) {
-        setService(foundService);
-        setLoading(false);
-      } else {
-        navigate('/');
-      }
+  if (services && services.length > 0 && id) {
+    // Try to find by ID as number or string
+    const foundService = services.find(s => String(s.id) === String(id));
+    if (foundService) {
+      setService(foundService);
+      setLoading(false);
+    } else {
+      // Don't redirect immediately - show a "not found" message instead
+      setLoading(false);
+      setService(null);
     }
-  }, [id, services, navigate]);
+  } else if (services && services.length === 0) {
+    setLoading(false);
+  }
+}, [id, services]);
 
   const handleChange = (e) => {
     setFormData({
@@ -59,9 +64,17 @@ const ServiceDetailPage = () => {
     );
   }
 
-  if (!service) {
-    return null;
-  }
+  if (loading) {
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-900 mx-auto"></div>
+        <p className="mt-4 text-gray-600">Loading service details...</p>
+      </div>
+    </div>
+  );
+}
+
 
   return (
     <div className="min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
